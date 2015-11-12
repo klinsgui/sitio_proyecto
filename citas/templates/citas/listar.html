@@ -18,8 +18,8 @@
                 <p>Edad del paciente: {{ citreser.edad }}</p>
                 <p>Descripción del malestar que lo aqueja: {{ citreser..descripcion_malestar}}</p>
                 <p>Lo atiende: {{ citreser.medico }}</p>
-                <p>Estado de cita: {{ citreser.realizada }}</p>
-                <p>{{ post.text|linebreaks }}</p>
+                <p>Estado de cita: {{ citreser.realizada}}</p>
+                <p>{{ citreser.text|linebreaks }}</p>
             </div>
             {% endfor %}
             </div>
