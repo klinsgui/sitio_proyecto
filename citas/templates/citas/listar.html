@@ -10,16 +10,20 @@
                 <h6>Nota: tomar en cuenta la información que se proporciona</h6>
             </div>
 
+            {% for citreser in citas %}
             <div>
-                <p>published: 14.06.2014, 12:14</p>
-                <h2><a href="">My first post</a></h2>
-                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                <p>Fecha de cita: {{ citreser.fecha_cita }}</p>
+                <h1><a href="">{{ citreser.tipo_cita }}</a></h1>
+                <p>Nombre del paciente: {{ citreser.paciente }}</p>
+                <p>Edad del paciente: {{ citreser.edad }}</p>
+                <p>Descripción del malestar que lo aqueja: {{ citreser..descripcion_malestar}}</p>
+                <p>Lo atiende: {{ citreser.medico }}</p>
+                <p>Estado de cita: {{ citreser.realizada }}</p>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+            {% endfor %}
             </div>
 
-            <div>
-                <p>published: 14.06.2014, 12:14</p>
-                <h2><a href="">My second post</a></h2>
-                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-            </div>
+
         </body>
     </html>
