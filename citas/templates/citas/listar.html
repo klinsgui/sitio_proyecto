@@ -1,29 +1,43 @@
+{% load staticfiles %}
 <html>
         <head>
             <title>Clinica UVS</title>
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+            <link rel="stylesheet" href="{% static 'css/citas.css' %}">
+            <link href="http://fonts.googleapis.com/css?family=Pacifico&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+            <link href="http://fonts.googleapis.com/css?family=Righteous&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+            <link href="http://fonts.googleapis.com/css?family=Belleza&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         </head>
         <body>
-            <div>
+            <div class="page-header">
                 <h1><a href="">Sitio de Clínica "Una Vita Sana"</a></h1>
+                <img src="http://www.ucan.edu.ni/wp-content/uploads/2014/12/FACULTADES-CIENCIAS-MEDICAS-1024x164.jpg"  alt="Smiley face" height="100" width="650">
                 <h2>Cuida tu salud y vive feliz</h2>
                 <h4>En esta página se muestran las citas del día</h4>
                 <h6>Nota: tomar en cuenta la información que se proporciona</h6>
-            </div>
+                </div>
 
-            {% for citreser in citas %}
-            <div>
-                <p>Fecha de cita: {{ citreser.fecha_cita }}</p>
-                <h1><a href="">{{ citreser.tipo_cita }}</a></h1>
-                <p>Nombre del paciente: {{ citreser.paciente }}</p>
-                <p>Edad del paciente: {{ citreser.edad }}</p>
-                <p>Descripción del malestar que lo aqueja: {{ citreser..descripcion_malestar}}</p>
-                <p>Lo atiende: {{ citreser.medico }}</p>
-                <p>Estado de cita: {{ citreser.realizada}}</p>
-                <p>{{ citreser.text|linebreaks }}</p>
-            </div>
-            {% endfor %}
-            </div>
-
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-8">
+                      {% for citreser in citas %}
+                          <div class="post">
+                              <div class="date">
+                                  <p>Fecha de cita: {{ citreser.fecha_cita }}</p>
+                              </div>
+                                  <h1><a href="">{{ citreser.tipo_cita }}</a></h1>
+                                  <p>Nombre del paciente: {{ citreser.paciente }}</p>
+                                  <p>Edad del paciente: {{ citreser.edad }}</p>
+                                  <p>Descripción del malestar que lo aqueja: {{ citreser..descripcion_malestar}}</p>
+                                  <p>Lo atiende: {{ citreser.medico }}</p>
+                                  <p>Estado de cita: {{ citreser.realizada}}</p>
+                                  <p>{{ citreser.text|linebreaks }}</p>
+                          </div>
+                      {% endfor %}
+                    </div>
+                </div>
+          </div>
 
         </body>
     </html>
