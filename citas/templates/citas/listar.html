@@ -3,7 +3,7 @@
     {% for citreser in citas %}
       <div class="post">
         <div class="date">
-          <p>Fecha de cita: {{ citreser.fecha_cita }}</p>
+          <p>Fecha de cita:</p><h4> {{ citreser.fecha_cita }}</h4>
         </div>
           <!--h1><a href="">{{ citreser.tipo_cita }}</a></h1-->
           <h1><a href="{% url 'citas.views.detalle_cita' pk=citreser.pk %}">{{ citreser.tipo_cita }}</a></h1>
