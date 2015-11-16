@@ -11,7 +11,8 @@
         </head>
         <body>
             <div class="page-header">
-                <h1><a href="">Sitio de Clínica "Una Vita Sana"</a></h1>
+              <a href="{% url 'citas.views.cita_nueva' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <h1><a href="{% url 'citas.views.listar_citas' %}">Sitio de Clínica "Una Vita Sana"</a></h1>
                 <img src="http://www.ucan.edu.ni/wp-content/uploads/2014/12/FACULTADES-CIENCIAS-MEDICAS-1024x164.jpg"  alt="Smiley face" height="100" width="650">
                 <h2>Cuida tu salud y vive feliz</h2>
                 <h4>En esta página se muestran las citas del día</h4>
