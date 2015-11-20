@@ -8,7 +8,8 @@ import time
 
 # Create your views here.
 def listar_citas(request):
-    citasprogramadas = Citar.objects.filter(realizada=False, fecha_cita__lte = date.today())#.order_by('fecha_cita'))
+    citasprogramadas = Citar.objects.filter(realizada=False)
+    citasprogramadas = Citar.objects.filter(fecha_cita__gte = timezone.now()).order_by('fecha_cita')
     return render(request, 'citas/listar.html', {'citas': citasprogramadas})
 
 def detalle_cita(request, pk):
